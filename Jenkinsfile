@@ -76,19 +76,18 @@ pipeline
             }
         }
         
-         stage('Publish Allure Reports After Sanity') {
-           steps {
-                script {
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: '/allure-results']]
-                    ])
-                }
+          stage('Publish Extent Report'){
+            steps{
+                     publishHTML([allowMissing: false,
+                                  alwaysLinkToLastBuild: false, 
+                                  keepAll: false, 
+                                  reportDir: 'reports', 
+                                  reportFiles: 'APIExecutionReport.html', 
+                                  reportName: 'API HTML Extent Report', 
+                                  reportTitles: ''])
             }
         }
+
        
                 
         
