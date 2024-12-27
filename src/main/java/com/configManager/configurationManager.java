@@ -14,6 +14,12 @@ public class configurationManager {
 		String env = System.getProperty("env");
 		prop = new Properties();
 		try {
+			if (env == null) {
+				System.out.println("no env is given...hence running tests on QA env... ");
+				fis = new FileInputStream("./src/test/resources/config/config.properties");
+			} else {
+				System.out.println("Running tests on env: " + env);
+			}
 			switch (env.toLowerCase().trim()) {
 			case "qa":
 			    fis = new FileInputStream("./src/test/resources/config/qa.config.properties");
