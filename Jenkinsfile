@@ -37,7 +37,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/aakashb9999/APIAutomation1'
-                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunner/testng.xml"
+                    bat "mvn clean test -Denv ="test" -Dsurefire.suiteXmlFiles=src/test/resources/testRunner/testng.xml"
                     
                 }
             }
