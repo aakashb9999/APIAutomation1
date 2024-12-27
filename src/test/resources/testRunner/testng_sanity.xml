@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+
+ 
+	
+   <test thread-count="5" name="AmedausFlight">
+   <parameter name="baseURI" value="https://test.api.amadeus.com"/>
+   <parameter name="grantType" value="client_credentials"/>
+   <parameter name="clientId" value="RISbkLgssgXTjClZoZAM08CrAKCGaoER"/>
+   
+                                      
+   <parameter name="clientSecret" value="lTo37PBAsx0an25A"/>
+ 
+  
+    <classes>
+      <class name="com.test.AmedusApi"/>
+    </classes>
+    </test>
+
+</suite> <!-- Suite -->
